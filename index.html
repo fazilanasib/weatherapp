@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Woodbridge</h1>
+      <p class="cloudysun">🌤️</p>
+      <h3>
+        Today
+        <p id="date">Thursday 12:30</p>
+        <br />
+        <span id="tempe"> 8</span>
+        <span class="links">
+          <a href="#" id="celsius-link">°C</a> |
+          <a href="#" id="fahrenheit-link">°F</a>
+        </span>
+      </h3>
+      <ul>
+        <li id="describe">Cloudy</li>
+        <br />
+        <li id="humidity">Humidity: 66%</li>
+        <br />
+        <li id="wind">Wind: 11 mph</li>
+      </ul>
+      <div class="row">
+        <div class="col">
+          <h5>Saturday</h5>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                ☁️
+                <p class="temp">46°</p>
+              </div>
+              <div class="flip-card-back">
+                <p>Precipitation: 1%</p>
+                <p>Humidity: 60%</p>
+                <p>Wind: 10 mph</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h5>Sunday</h5>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                🌤️ <br />
+                <p class="temp">40°</p>
+              </div>
+              <div class="flip-card-back">
+                <p>Precipitation: 0%</p>
+                <p>Humidity: 37%</p>
+                <p>Wind: 13 mph</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h5>Monday</h5>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                🌤️ <br />
+                <p class="temp">43°</p>
+              </div>
+              <div class="flip-card-back">
+                <p>Precipitation: 0%</p>
+                <p>Humidity: 30%</p>
+                <p>Wind: 13 mph</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h5>Tuesday</h5>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                ☁️ <br />
+                <p class="temp">44°</p>
+              </div>
+              <div class="flip-card-back">
+                <p>Precipitation: 1%</p>
+                <p>Humidity: 30%</p>
+                <p>Wind: 11 mph</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h5>Wednesday</h5>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                🌤️ <br />
+                <p class="temp">44°</p>
+              </div>
+              <div class="flip-card-back">
+                <p>Precipitation: 0%</p>
+                <p>Humidity: 34%</p>
+                <p>Wind: 12 mph</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form>
+        City 🏙️:
+        <input type="text" placeholder="Enter here!" id="enterhere-input" />
+        <input type="submit" value="Search" id="search-input" />
+      </form>
+      <button>Current</button>
+      <script src="src/index.js"></script>
+    </div>
+  </body>
+</html>
