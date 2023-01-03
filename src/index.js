@@ -70,10 +70,10 @@ function searchLocation(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(weather);
 }
-function location(event) {
+function locate(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
 let currentButton = document.querySelector("button");
-currentButton.addEventListener("click", location);
+currentButton.addEventListener("click", locate);
