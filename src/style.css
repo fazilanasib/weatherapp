@@ -7,7 +7,7 @@
   margin: 27.5px;
   padding: 30px;
   text-align: left;
-  width: 650px;
+  width: 750px;
 }
 h1 {
   text-align: center;
@@ -76,6 +76,7 @@ ul {
   position: relative;
   bottom: 150px;
   margin: 0 auto;
+  padding: 0px;
 }
 col {
   margin: 0 auto;
@@ -84,7 +85,7 @@ col {
 h5 {
   font-size: 18px;
   position: relative;
-  right: -15px;
+  right: -10px;
   font-weight: bold;
   margin: 0 auto;
 }
@@ -94,7 +95,7 @@ h5 {
   height: 100px;
   border: 2px solid yellow;
   border-radius: 20px;
-  margin: 10px;
+  margin: 0px;
 }
 .flip-card-inner {
   width: 100%;
