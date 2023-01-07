@@ -55,12 +55,16 @@ function weather(response) {
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} mph`;
 }
 
-function searchButton(event) {
-  event.preventDefault();
-  let city = document.querySelector("#enterhere-input").value;
+function searchCity(city) {
   let apiKey = "0f8bc384a7c31b717a18cfe38a95ae06";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(weather);
+}
+
+function searchButton(event) {
+  event.preventDefault();
+  let city = document.querySelector("#enterhere-input").value;
+  searchCity(city);
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", searchButton);
@@ -77,3 +81,5 @@ function locate(event) {
 
 let currentButton = document.querySelector("button");
 currentButton.addEventListener("click", locate);
+
+searchCity("Woodbridge");
