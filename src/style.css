@@ -40,8 +40,11 @@ h3 {
   font-weight: bold;
   margin: 0 auto;
 }
+.update {
+  font-size: 18px;
+}
 #date {
-  font-size: 22px;
+  font-size: 18px;
   color: rgb(0, 4, 255);
   padding: 0;
   margin: 0 auto;
@@ -65,8 +68,8 @@ a:hover {
 }
 ul {
   position: relative;
-  top: -210px;
-  right: -390px;
+  top: -200px;
+  right: -450px;
   list-style: none;
   font-size: 18px;
   font-weight: bold;
