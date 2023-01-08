@@ -21,22 +21,22 @@ h1 {
   border-radius: 30px;
 }
 
-.cloudysun {
+#iconCloudy {
   border: 2px solid yellow;
   border-radius: 10px;
   padding: 10px;
   display: inline;
-  font-size: 100px;
+  font-size: 40px;
   position: relative;
   bottom: -70px;
   left: 10px;
   margin: 20px;
-  width: 300px;
+  width: 150px;
 }
 h3 {
   position: relative;
-  top: -74px;
-  right: -170px;
+  top: -90px;
+  right: -190px;
   font-size: 22px;
   font-weight: bold;
   margin: 0 auto;
@@ -69,8 +69,8 @@ a:hover {
 }
 ul {
   position: relative;
-  top: -200px;
-  right: -450px;
+  top: -220px;
+  right: -500px;
   list-style: none;
   font-size: 18px;
   font-weight: bold;

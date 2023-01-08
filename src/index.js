@@ -53,6 +53,9 @@ function weather(response) {
 
   let wind = document.querySelector("#wind");
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} mph`;
+
+  let iconCloudy = document.querySelector("#iconCloudy");
+  iconCloudy.setAttribute = `http://openweathermap.org/img/wn/10d@2x.png`;
 }
 
 function searchCity(city) {
