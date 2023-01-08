@@ -26,24 +26,34 @@ let currentTime = new Date();
 let time = document.querySelector("#date");
 time.innerHTML = currentDate(currentTime);
 
-function convertToCelsius(event) {
+function displayFahrenheit(event) {
   event.preventDefault();
-  let celTemp = document.querySelector("#tempe");
-  celTemp.innerHTML = 8;
+  let fahrenTemp = (celsiusTemperature * 9) / 5 + 32;
+  let temperature = document.querySelector("#tempe");
+  temperature.innerHTML = Math.round(fahrenTemp);
 }
 
-function convertToFahrenheit(event) {
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+function displayCelsius(event) {
   event.preventDefault();
-  let farTemp = document.querySelector("#tempe");
-  farTemp.innerHTML = 48;
+  let temperature = document.querySelector("#tempe");
+  temperature.innerHTML = Math.round(celsiusTemperature);
 }
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsius);
+
+let celsiusTemperature = null;
 
 function weather(response) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
 
+  celsiusTemperature = response.data.main.temp;
+
   let temperature = document.querySelector("#tempe");
-  temperature.innerHTML = Math.round(response.data.main.temp);
+  temperature.innerHTML = Math.round(celsiusTemperature);
 
   let description = document.querySelector("#describe");
   description.innerHTML = response.data.weather[0].description;
