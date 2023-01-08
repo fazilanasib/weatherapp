@@ -138,23 +138,7 @@ h5 {
 #describe {
   text-transform: capitalize;
 }
-form {
-  font-weight: bold;
-  font-size: 24px;
-  display: inline;
-  color: yellow;
-}
-#enterhere-input {
-  width: 300px;
-  height: 30px;
-}
-#search-input {
-  width: 80px;
-  height: 34px;
-  font-size: 18px;
-  background-color: blue;
-  color: white;
-}
+
 #icontwo,
 #iconthree,
 #iconfour,
@@ -162,10 +146,18 @@ form {
 #iconsix {
   width: 70px;
 }
+#search-input {
+  background-color: blue;
+  color: white;
+}
 button {
   display: inline;
-  width: 80px;
-  height: 34px;
-  font-size: 18px;
-  background-color: Yellow;
+  width: 100px;
+  height: 37px;
+  font-size: 16px;
+  background-color: blue;
+  color: white;
+  border-radius: 7px;
+  padding: 5px;
+  border: 1px solid white;
 }
