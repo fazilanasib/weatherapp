@@ -55,7 +55,11 @@ function weather(response) {
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} mph`;
 
   let iconCloudy = document.querySelector("#iconCloudy");
-  iconCloudy.setAttribute = `http://openweathermap.org/img/wn/10d@2x.png`;
+  iconCloudy.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconCloudy.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {
