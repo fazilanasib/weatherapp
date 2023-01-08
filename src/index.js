@@ -30,6 +30,8 @@ function displayFahrenheit(event) {
   event.preventDefault();
   let fahrenTemp = (celsiusTemperature * 9) / 5 + 32;
   let temperature = document.querySelector("#tempe");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   temperature.innerHTML = Math.round(fahrenTemp);
 }
 
@@ -38,6 +40,8 @@ fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 function displayCelsius(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperature = document.querySelector("#tempe");
   temperature.innerHTML = Math.round(celsiusTemperature);
 }

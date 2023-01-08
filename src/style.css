@@ -50,22 +50,24 @@ h3 {
   margin: 0 auto;
 }
 #tempe {
-  font-size: 30px;
+  font-size: 35px;
   margin: 0 auto;
   padding: 0;
 }
 .links {
-  font-size: 16px;
+  font-size: 18px;
   position: relative;
   top: -10px;
-  color: rgb(0, 4, 255);
 }
 a:link {
   text-decoration: none;
+  cursor: default;
 }
-a:hover {
-  text-decoration: underline;
+
+h3 .links .active {
+  color: black;
 }
+
 ul {
   position: relative;
   top: -220px;
