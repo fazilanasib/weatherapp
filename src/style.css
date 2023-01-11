@@ -71,21 +71,22 @@ h3 .links .active {
 ul {
   position: relative;
   top: -220px;
-  right: -500px;
+  right: -450px;
   list-style: none;
   font-size: 18px;
   font-weight: bold;
 }
-.row {
-  display: flex;
+.weather-forcast {
+  text-align: center;
   position: relative;
-  bottom: 100px;
+  bottom: 150px;
+  right: -40px;
   margin: 0 auto;
   padding: 0px;
 }
 col {
   margin: 0 auto;
-  padding: 3px;
+  padding: 20px;
 }
 h5 {
   font-size: 18px;
@@ -141,11 +142,7 @@ h5 {
   text-transform: capitalize;
 }
 
-#icontwo,
-#iconthree,
-#iconfour,
-#iconfive,
-#iconsix {
+#icontwo {
   width: 70px;
 }
 #search-input {
