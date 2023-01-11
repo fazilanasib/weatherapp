@@ -83,6 +83,12 @@ celsiusLink.addEventListener("click", displayCelsius);
 
 let celsiusTemperature = null;
 
+function getForecast(coordinates) {
+  let apiKey = "0f8bc384a7c31b717a18cfe38a95ae06";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function weather(response) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
@@ -107,6 +113,8 @@ function weather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconCloudy.setAttribute("alt", response.data.weather[0].description);
+
+  getforecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -137,4 +145,3 @@ let currentButton = document.querySelector("button");
 currentButton.addEventListener("click", locate);
 
 searchCity("Woodbridge");
-displayForecast();
