@@ -26,6 +26,39 @@ let currentTime = new Date();
 let time = document.querySelector("#date");
 time.innerHTML = currentDate(currentTime);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forcast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+            <h5>${day}</h5>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                    alt="Clear"
+                    class="float-left"
+                    id="icontwo" />
+                  <p class="temp">46°</p>
+                </div>
+                <div class="flip-card-back">
+                  <p>Cloudy</p>
+                  <p>Humidity: 60%</p>
+                  <p>Wind: 10 mph</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayFahrenheit(event) {
   event.preventDefault();
   let fahrenTemp = (celsiusTemperature * 9) / 5 + 32;
@@ -104,3 +137,4 @@ let currentButton = document.querySelector("button");
 currentButton.addEventListener("click", locate);
 
 searchCity("Woodbridge");
+displayForecast();
