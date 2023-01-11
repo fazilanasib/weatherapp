@@ -30,12 +30,12 @@ h1 {
   bottom: -70px;
   left: 10px;
   margin: 20px;
-  width: 150px;
+  width: 130px;
 }
 h3 {
   position: relative;
-  top: -90px;
-  right: -190px;
+  top: -80px;
+  right: -170px;
   font-size: 22px;
   font-weight: bold;
   margin: 0 auto;
@@ -70,10 +70,10 @@ h3 .links .active {
 
 ul {
   position: relative;
-  top: -220px;
-  right: -450px;
+  top: -210px;
+  right: -480px;
   list-style: none;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
 .weather-forcast {
