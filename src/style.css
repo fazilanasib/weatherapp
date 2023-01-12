@@ -8,7 +8,7 @@
   padding: 30px;
   text-align: left;
   width: 750px;
-  height: 600px;
+  height: 650px;
 }
 h1 {
   text-align: center;
@@ -32,10 +32,11 @@ h1 {
   left: 10px;
   margin: 20px;
   width: 130px;
+  height: 150px;
 }
 h3 {
   position: relative;
-  top: -140px;
+  top: -155px;
   right: -170px;
   font-size: 22px;
   font-weight: bold;
@@ -71,7 +72,7 @@ h3 .links .active {
 
 ul {
   position: relative;
-  top: -270px;
+  top: -290px;
   right: -480px;
   list-style: none;
   font-size: 16px;
@@ -80,7 +81,7 @@ ul {
 .weather-forcast {
   text-align: center;
   position: relative;
-  bottom: 220px;
+  bottom: 230px;
   right: -50px;
   margin: 0 auto;
   padding: 0px;
@@ -99,7 +100,7 @@ h5 {
 .flip-card {
   background-color: transparent;
   width: 100px;
-  height: 100px;
+  height: 150px;
   border: 2px solid yellow;
   border-radius: 20px;
   margin: 0px;
@@ -145,12 +146,11 @@ h5 {
 }
 
 #icontwo {
-  width: 75px;
+  width: 90px;
 }
 #form {
   position: relative;
-  top: -200px;
-  right: -30px;
+  top: -230px;
 }
 
 #search-input {
@@ -167,8 +167,4 @@ button {
   border-radius: 7px;
   padding: 5px;
   border: 1px solid white;
-}
-#source {
-  position: relative;
-  top: -150px;
 }
