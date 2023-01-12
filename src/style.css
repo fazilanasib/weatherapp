@@ -139,7 +139,7 @@ h5 {
   color: black;
   transform: rotateY(180deg);
   font-size: 10px;
-  padding: 5px;
+  padding: 30px 5px;
 }
 #describe {
   text-transform: capitalize;

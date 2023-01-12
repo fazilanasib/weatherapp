@@ -54,12 +54,14 @@ function displayForecast(response) {
                     alt="Clear"
                     class="float-left"
                     id="icontwo" />
-                  <p class="temp">${Math.round(forecastDay.temp.max)}°</p>
+                  <p class="temp">${Math.round(
+                    (forecastDay.temp.max * 9) / 5 + 32
+                  )}°</p>
                 </div>
                 <div class="flip-card-back">
                   <p>${forecastDay.weather[0].description}</p>
                   <p>Humidity: ${forecastDay.humidity}%</p>
-                  <p>Wind: ${Math.round(forecastDay.wind_speed)} MPH</p>
+                  <p>Wind: ${Math.round(forecastDay.wind_speed)} KM/H</p>
                 </div>
               </div>
             </div>
@@ -117,7 +119,7 @@ function weather(response) {
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 
   let wind = document.querySelector("#wind");
-  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} MPH`;
+  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
 
   let iconCloudy = document.querySelector("#iconCloudy");
   iconCloudy.setAttribute(
