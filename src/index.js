@@ -61,7 +61,7 @@ function displayForecast(response) {
                 <div class="flip-card-back">
                   <p>${forecastDay.weather[0].description}</p>
                   <p>Humidity: ${forecastDay.humidity}%</p>
-                  <p>Wind: ${Math.round(forecastDay.wind_speed)} KM/H</p>
+                  <p>Wind: ${Math.round(forecastDay.wind_speed)} MPH</p>
                 </div>
               </div>
             </div>
@@ -73,30 +73,6 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function displayFahrenheit(event) {
-  event.preventDefault();
-  let fahrenTemp = (celsiusTemperature * 9) / 5 + 32;
-  let temperature = document.querySelector("#tempe");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  temperature.innerHTML = Math.round(fahrenTemp);
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheit);
-
-function displayCelsius(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperature = document.querySelector("#tempe");
-  temperature.innerHTML = Math.round(celsiusTemperature);
-}
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsius);
-
-let celsiusTemperature = null;
-
 function getForecast(coordinates) {
   let apiKey = "0f8bc384a7c31b717a18cfe38a95ae06";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
@@ -107,10 +83,10 @@ function weather(response) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
 
-  celsiusTemperature = response.data.main.temp;
+  fahrenheitTemperature = (response.data.main.temp * 9) / 5 + 32;
 
   let temperature = document.querySelector("#tempe");
-  temperature.innerHTML = Math.round(celsiusTemperature);
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
 
   let description = document.querySelector("#describe");
   description.innerHTML = response.data.weather[0].description;
@@ -119,7 +95,7 @@ function weather(response) {
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 
   let wind = document.querySelector("#wind");
-  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} mph`;
 
   let iconCloudy = document.querySelector("#iconCloudy");
   iconCloudy.setAttribute(
