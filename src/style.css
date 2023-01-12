@@ -8,6 +8,7 @@
   padding: 30px;
   text-align: left;
   width: 750px;
+  height: 600px;
 }
 h1 {
   text-align: center;
@@ -27,14 +28,14 @@ h1 {
   display: inline;
   font-size: 40px;
   position: relative;
-  bottom: -70px;
+  bottom: -10px;
   left: 10px;
   margin: 20px;
   width: 130px;
 }
 h3 {
   position: relative;
-  top: -80px;
+  top: -140px;
   right: -170px;
   font-size: 22px;
   font-weight: bold;
@@ -70,7 +71,7 @@ h3 .links .active {
 
 ul {
   position: relative;
-  top: -210px;
+  top: -270px;
   right: -480px;
   list-style: none;
   font-size: 16px;
@@ -79,7 +80,7 @@ ul {
 .weather-forcast {
   text-align: center;
   position: relative;
-  bottom: 150px;
+  bottom: 220px;
   right: -50px;
   margin: 0 auto;
   padding: 0px;
@@ -146,6 +147,12 @@ h5 {
 #icontwo {
   width: 75px;
 }
+#form {
+  position: relative;
+  top: -200px;
+  right: -30px;
+}
+
 #search-input {
   background-color: blue;
   color: white;
@@ -160,4 +167,8 @@ button {
   border-radius: 7px;
   padding: 5px;
   border: 1px solid white;
+}
+#source {
+  position: relative;
+  top: -150px;
 }
