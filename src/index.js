@@ -26,35 +26,46 @@ let currentTime = new Date();
 let time = document.querySelector("#date");
 time.innerHTML = currentDate(currentTime);
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forcast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Sat", "Sun", "Mon", "Tues", "Wed"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-            <h5>${day}</h5>
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+            <h5>${formatDay(forecastDay.dt)}</h5>
             <div class="flip-card">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <img
-                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                    src="http://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png";
                     alt="Clear"
                     class="float-left"
                     id="icontwo" />
-                  <p class="temp">46°</p>
+                  <p class="temp">${Math.round(forecastDay.temp.max)}°</p>
                 </div>
                 <div class="flip-card-back">
-                  <p>Cloudy</p>
-                  <p>Humidity: 60%</p>
-                  <p>Wind: 10 mph</p>
+                  <p>${forecastDay.weather[0].description}</p>
+                  <p>Humidity: ${forecastDay.humidity}%</p>
+                  <p>Wind: ${Math.round(forecastDay.wind_speed)} MPH</p>
                 </div>
               </div>
             </div>
           </div>
         `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -85,8 +96,8 @@ celsiusLink.addEventListener("click", displayCelsius);
 let celsiusTemperature = null;
 
 function getForecast(coordinates) {
-  let apiKey = `374d348affb35ed40a6f8a1oa7fc8tc6`;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}&units=metric`;
+  let apiKey = "0f8bc384a7c31b717a18cfe38a95ae06";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -106,7 +117,7 @@ function weather(response) {
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 
   let wind = document.querySelector("#wind");
-  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} mph`;
+  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} MPH`;
 
   let iconCloudy = document.querySelector("#iconCloudy");
   iconCloudy.setAttribute(
