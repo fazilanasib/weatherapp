@@ -52,7 +52,7 @@ h3 {
   margin: 0 auto;
 }
 #tempe {
-  font-size: 35px;
+  font-size: 40px;
   margin: 0 auto;
   padding: 0;
 }
@@ -82,7 +82,6 @@ ul {
   text-align: center;
   position: relative;
   bottom: 230px;
-  right: -50px;
   margin: 0 auto;
   padding: 0px;
 }
@@ -130,7 +129,7 @@ h5 {
   font-weight: bold;
 }
 .temp {
-  font-size: 18px;
+  font-size: 25px;
   padding: 0px;
   margin: 0;
 }
